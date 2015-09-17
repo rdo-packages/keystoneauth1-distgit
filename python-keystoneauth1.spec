@@ -1,12 +1,14 @@
 %global pypi_name keystoneauth1
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:       python-%{pypi_name}
-Version:    1.0.0
-Release:    1%{?dist}
+Version:    XXX
+Release:    XXX
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
-Source0:    http://pypi.python.org/packages/source/k/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:    http://tarballs.openstack.org/keystoneauth/keystoneauth-master.tar.gz
 
 BuildArch:  noarch
 
@@ -49,7 +51,7 @@ BuildRequires: python-fixtures
 Documentation for OpenStack Identity Authentication Library
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%setup -q -n %{pypi_name}-%{upstream_version}
 
 # Let RPM handle the dependencies
 rm -f test-requirements.txt requirements.txt
@@ -84,5 +86,3 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc doc/build/html
 
 %changelog
-* Thu Sep 17 2015 Thomas Oulevey <thomas.oulevey@cern.ch> - 1.0.0-1
-- Initial specfile
