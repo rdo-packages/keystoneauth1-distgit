@@ -39,8 +39,8 @@ BuildRequires: python-oslo-sphinx
 BuildRequires: python-mock
 BuildRequires: python-pep8
 BuildRequires: python-requests
-# Can be added when available
-# BuildRequires: python-mox3
+BuildRequires: python-requests-mock
+BuildRequires: python-mox3
 BuildRequires: python-oslo-config
 BuildRequires: python-stevedore
 BuildRequires: python-iso8601
