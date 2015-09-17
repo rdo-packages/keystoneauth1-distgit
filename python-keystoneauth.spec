@@ -10,6 +10,7 @@ Source0:    http://pypi.python.org/packages/source/k/%{pypi_name}/%{pypi_name}-%
 
 BuildArch:  noarch
 
+Provides:      python-%{pypi_name}
 Provides:      python-keystoneauth
 
 BuildRequires: python2-devel
