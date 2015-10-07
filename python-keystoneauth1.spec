@@ -6,7 +6,7 @@
 
 Name:       python-%{pypi_name}
 Version:    1.1.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
@@ -36,6 +36,10 @@ Requires:      python-oslo-config
 Requires:      python-requests >= 2.5.2
 Requires:      python-six => 1.9.0
 
+# test requres
+BuildRequires: python-testrepository
+BuildRequires: python-oslotest
+
 %description -n python2-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
 within the OpenStack ecosystem. It is designed for use in conjunction with
@@ -58,6 +62,9 @@ Requires:      python3-oslo-config
 Requires:      python3-requests >= 2.5.2
 Requires:      python3-six => 1.9.0
 
+# test requres
+BuildRequires: python3-testrepository
+BuildRequires: python3-oslotest
 
 %description -n python3-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
@@ -115,6 +122,8 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %check
 %{__python2} setup.py test
 %if 0%{?with_python3}
+# cleanup testrepository
+rm -rf .testrepository
 %{__python3} setup.py test
 %endif
 
@@ -139,6 +148,9 @@ rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
 %doc doc/build/html
 
 %changelog
+* Wed Oct 07 2015 Alan Pevec <alan.pevec@redhat.com> 1.1.0-2
+- fix tests (Lukas Bezdicka)
+
 * Tue Oct 06 2015 Alan Pevec <alan.pevec@redhat.com> 1.1.0-1
 - Update to upstream 1.1.0
 
