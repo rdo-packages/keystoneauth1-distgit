@@ -5,8 +5,8 @@
 %endif
 
 Name:       python-%{pypi_name}
-Version:    1.1.0
-Release:    4%{?dist}
+Version:    2.1.0
+Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
@@ -25,20 +25,26 @@ Summary:        Authentication Libarary for OpenStack Identity
 Provides:       python-%{pypi_name} = %{version}-%{release}
 Provides:       python-keystoneauth = %{version}-%{release}
 
+BuildRequires: git
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-six
 BuildRequires: python-pbr
 
-Requires:      python-stevedore
-Requires:      python-iso8601 >= 0.1.9
-Requires:      python-oslo-config
-Requires:      python-requests >= 2.5.2
-Requires:      python-six => 1.9.0
-
 # test requres
+BuildRequires: python-betamax
+BuildRequires: python-lxml
+BuildRequires: python-requests-kerberos
 BuildRequires: python-testrepository
 BuildRequires: python-oslotest
+BuildRequires: python-oslo-utils
+
+Requires:      python-argparse
+Requires:      python-iso8601 >= 0.1.9
+Requires:      python-pbr >= 1.6.0
+Requires:      python-requests >= 2.9.1
+Requires:      python-six => 1.9.0
+Requires:      python-stevedore >= 1.5.0
 
 %description -n python2-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
@@ -56,15 +62,20 @@ BuildRequires: python3-setuptools
 BuildRequires: python3-pbr >= 1.3
 BuildRequires: python3-sphinx
 
-Requires:      python3-stevedore
-Requires:      python3-iso8601 >= 0.1.9
-Requires:      python3-oslo-config
-Requires:      python3-requests >= 2.5.2
-Requires:      python3-six => 1.9.0
-
 # test requres
+BuildRequires: python3-betamax
+BuildRequires: python3-fixtures >= 1.3.1
+BuildRequires: python3-lxml
 BuildRequires: python3-testrepository
 BuildRequires: python3-oslotest
+BuildRequires: python3-oslo-utils
+
+Requires:      python3-argparse
+Requires:      python3-iso8601 >= 0.1.9
+Requires:      python3-pbr >= 1.6.0
+Requires:      python3-requests >= 2.9.1
+Requires:      python3-six => 1.9.0
+Requires:      python3-stevedore >= 1.5.0
 
 %description -n python3-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
@@ -92,10 +103,12 @@ BuildRequires: python-fixtures
 Documentation for OpenStack Identity Authentication Library
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%autosetup -n %{pypi_name}-%{version} -S git
+
+sed -i '/sphinx.ext.intersphinx.*$/d'  doc/source/conf.py
 
 # Let RPM handle the dependencies
-rm -f test-requirements.txt requirements.txt
+rm -rf {test-,}requirements.txt
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -106,27 +119,22 @@ rm -rf %{pypi_name}.egg-info
 %endif
 
 %install
+%py2_install
 %if 0%{?with_python3}
 %py3_install
 %endif
-%py2_install
 
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-pushd doc
-make html
-popd
-
-# Fix hidden-file-or-dir warnings
-rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
+# generate html docs
+%{__python} setup.py build_sphinx
+rm -rf doc/build/html/.buildinfo
 
 %check
-%{__python2} setup.py test
+%{__python2} setup.py testr
 %if 0%{?with_python3}
 # cleanup testrepository
 rm -rf .testrepository
-%{__python3} setup.py test
+%{__python3} setup.py testr
 %endif
-
 
 %files -n python2-%{pypi_name}
 %doc README.rst
@@ -142,12 +150,17 @@ rm -rf .testrepository
 %{python3_sitelib}/*.egg-info
 %endif
 
-
 %files doc
 %license LICENSE
 %doc doc/build/html
 
 %changelog
+* Fri Feb 05 2016 Paul Belanger <pabelanger@redhat.com> - 2.1.0-1
+- New upstream 2.1.0 release
+- Disable intersphinx to disable downloads from the internet at build time
+- Clean up build and requires dependencies
+- Switch to python setup.py build_sphinx since this is what upstream uses
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
