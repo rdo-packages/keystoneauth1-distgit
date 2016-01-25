@@ -17,14 +17,15 @@ Provides:      python-keystoneauth
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-six
-BuildRequires: python-pbr
+BuildRequires: python-pbr >= 1.6.0
 
-Requires:      python-stevedore
+Requires:      python-stevedore >= 1.5.0
 Requires:      python-iso8601 >= 0.1.9
 Requires:      python-oslo-config
 Requires:      python-requests >= 2.5.2
 Requires:      python-six => 1.9.0
 Requires:      python-argparse
+Requires:      python-positional >= 1.0.1
 
 %description
 Keystoneauth provides a standard way to do authentication and service requests 
