@@ -6,7 +6,7 @@
 
 Name:       python-%{pypi_name}
 Version:    1.1.0
-Release:    3%{?dist}
+Release:    4%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
@@ -148,6 +148,9 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
 
