@@ -7,7 +7,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    2.1.0
+Version:    2.2.0
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
@@ -158,6 +158,9 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Tue Mar 01 2016 Alan Pevec <alan.pevec@redhat.com> 2.2.0-1
+- Update to 2.2.0
+
 * Fri Feb 05 2016 Paul Belanger <pabelanger@redhat.com> - 2.1.0-1
 - New upstream 2.1.0 release
 - Disable intersphinx to disable downloads from the internet at build time
