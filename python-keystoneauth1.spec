@@ -31,10 +31,11 @@ BuildRequires: git
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-six
-BuildRequires: python-pbr
+BuildRequires: python-pbr >= 1.8.0
 
-# test requres
+# test requires
 BuildRequires: python-betamax
+BuildRequires: python-fixtures >= 1.3.1
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
 BuildRequires: python-testrepository
@@ -43,7 +44,7 @@ BuildRequires: python-oslo-utils
 
 Requires:      python-argparse
 Requires:      python-iso8601 >= 0.1.9
-Requires:      python-pbr >= 1.6.0
+Requires:      python-pbr >= 1.8.0
 Requires:      python-requests >= 2.9.1
 Requires:      python-six => 1.9.0
 Requires:      python-stevedore >= 1.5.0
@@ -61,7 +62,7 @@ Provides:       python3-keystoneauth = %{version}-%{release}
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
-BuildRequires: python3-pbr >= 1.3
+BuildRequires: python3-pbr >= 1.8.0
 BuildRequires: python3-sphinx
 
 # test requres
@@ -74,7 +75,7 @@ BuildRequires: python3-oslo-utils
 
 Requires:      python3-argparse
 Requires:      python3-iso8601 >= 0.1.9
-Requires:      python3-pbr >= 1.6.0
+Requires:      python3-pbr >= 1.8.0
 Requires:      python3-requests >= 2.9.1
 Requires:      python3-six => 1.9.0
 Requires:      python3-stevedore >= 1.5.0
