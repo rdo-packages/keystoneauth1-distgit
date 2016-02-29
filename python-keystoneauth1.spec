@@ -4,6 +4,8 @@
 %global with_python3 1
 %endif
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:       python-%{pypi_name}
 Version:    2.1.0
 Release:    1%{?dist}
@@ -103,7 +105,7 @@ BuildRequires: python-fixtures
 Documentation for OpenStack Identity Authentication Library
 
 %prep
-%autosetup -n %{pypi_name}-%{version} -S git
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 sed -i '/sphinx.ext.intersphinx.*$/d'  doc/source/conf.py
 
