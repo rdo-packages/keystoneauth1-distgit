@@ -1,5 +1,9 @@
 %global pypi_name keystoneauth1
 
+%if 0%{?fedora}
+%global with_python3 1
+%endif
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
@@ -12,26 +16,80 @@ Source0:    http://tarballs.openstack.org/keystoneauth/keystoneauth-master.tar.g
 
 BuildArch:  noarch
 
-Provides:      python-keystoneauth
+%description
+Keystoneauth provides a standard way to do authentication and service requests
+within the OpenStack ecosystem. It is designed for use in conjunction with
+the existing OpenStack clients and for simplifying the process of writing
+new clients.
 
+%package -n     python2-%{pypi_name}
+Summary:        Authentication Libarary for OpenStack Identity
+Provides:       python-%{pypi_name} = %{version}-%{release}
+Provides:       python-keystoneauth = %{version}-%{release}
+
+BuildRequires: git
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-six
-BuildRequires: python-pbr >= 1.6.0
+BuildRequires: python-pbr >= 1.8.0
 
-Requires:      python-stevedore >= 1.5.0
-Requires:      python-iso8601 >= 0.1.9
-Requires:      python-oslo-config
-Requires:      python-requests >= 2.5.2
-Requires:      python-six => 1.9.0
+# test requires
+BuildRequires: python-betamax
+BuildRequires: python-fixtures >= 1.3.1
+BuildRequires: python-lxml
+BuildRequires: python-requests-kerberos
+BuildRequires: python-testrepository
+BuildRequires: python-oslotest
+BuildRequires: python-oslo-utils
+BuildRequires: python-positional >= 1.0.1
+
 Requires:      python-argparse
+Requires:      python-iso8601 >= 0.1.9
+Requires:      python-pbr >= 1.8.0
 Requires:      python-positional >= 1.0.1
+Requires:      python-requests >= 2.9.1
+Requires:      python-six => 1.9.0
+Requires:      python-stevedore >= 1.5.0
 
-%description
-Keystoneauth provides a standard way to do authentication and service requests 
-within the OpenStack ecosystem. It is designed for use in conjunction with 
-the existing OpenStack clients and for simplifying the process of writing 
+%description -n python2-%{pypi_name}
+Keystoneauth provides a standard way to do authentication and service requests
+within the OpenStack ecosystem. It is designed for use in conjunction with
+the existing OpenStack clients and for simplifying the process of writing
 new clients.
+
+%if 0%{?with_python3}
+%package -n     python3-%{pypi_name}
+Summary:        Authentication Libarary for OpenStack Identity
+Provides:       python3-keystoneauth = %{version}-%{release}
+
+BuildRequires: python3-devel
+BuildRequires: python3-setuptools
+BuildRequires: python3-pbr >= 1.8.0
+BuildRequires: python3-sphinx
+
+# test requres
+BuildRequires: python3-betamax
+BuildRequires: python3-fixtures >= 1.3.1
+BuildRequires: python3-lxml
+BuildRequires: python3-testrepository
+BuildRequires: python3-oslotest
+BuildRequires: python3-oslo-utils
+BuildRequires: python3-positional >= 1.0.1
+
+Requires:      python3-argparse
+Requires:      python3-iso8601 >= 0.1.9
+Requires:      python3-pbr >= 1.8.0
+Requires:      python3-positional >= 1.0.1
+Requires:      python3-requests >= 2.9.1
+Requires:      python3-six => 1.9.0
+Requires:      python3-stevedore >= 1.5.0
+
+%description -n python3-%{pypi_name}
+Keystoneauth provides a standard way to do authentication and service requests
+within the OpenStack ecosystem. It is designed for use in conjunction with
+the existing OpenStack clients and for simplifying the process of writing
+new clients.
+%endif
 
 %package doc
 Summary:    Documentation for OpenStack Identity Authentication Library
@@ -52,35 +110,52 @@ BuildRequires: python-fixtures
 Documentation for OpenStack Identity Authentication Library
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
+
+sed -i '/sphinx.ext.intersphinx.*$/d'  doc/source/conf.py
 
 # Let RPM handle the dependencies
-rm -f test-requirements.txt requirements.txt
+rm -rf {test-,}requirements.txt
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
 %build
 %py2_build
+%if 0%{?with_python3}
+%py3_build
+%endif
 
 %install
 %py2_install
+%if 0%{?with_python3}
+%py3_install
+%endif
 
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-pushd doc
-make html
-popd
-
-# Fix hidden-file-or-dir warnings
-rm -fr doc/build/html/.doctrees doc/build/html/.buildinfo
+# generate html docs
+%{__python} setup.py build_sphinx
+rm -rf doc/build/html/.buildinfo
 
 %check
-%{__python2} setup.py test
+%{__python2} setup.py testr
+%if 0%{?with_python3}
+# cleanup testrepository
+rm -rf .testrepository
+%{__python3} setup.py testr
+%endif
 
-%files
+%files -n python2-%{pypi_name}
 %doc README.rst
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/*.egg-info
+
+%if 0%{?with_python3}
+%files -n python3-%{pypi_name}
+%doc README.rst
+%license LICENSE
+%{python3_sitelib}/%{pypi_name}
+%{python3_sitelib}/*.egg-info
+%endif
 
 %files doc
 %license LICENSE
