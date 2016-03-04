@@ -8,7 +8,7 @@
 
 Name:       python-%{pypi_name}
 Version:    2.2.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
@@ -42,7 +42,6 @@ BuildRequires: python-testrepository
 BuildRequires: python-oslotest
 BuildRequires: python-oslo-utils
 
-Requires:      python-argparse
 Requires:      python-iso8601 >= 0.1.9
 Requires:      python-pbr >= 1.8.0
 Requires:      python-requests >= 2.9.1
@@ -73,7 +72,6 @@ BuildRequires: python3-testrepository
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
 
-Requires:      python3-argparse
 Requires:      python3-iso8601 >= 0.1.9
 Requires:      python3-pbr >= 1.8.0
 Requires:      python3-requests >= 2.9.1
@@ -158,6 +156,9 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Thu Mar 03 2016 Paul Belanger <pabelanger@redhat.com> 2.2.0-2
+- Drop python-argparse dependency as bundled with python now (closes #1314516)
+
 * Tue Mar 01 2016 Alan Pevec <alan.pevec@redhat.com> 2.2.0-1
 - Update to 2.2.0
 
