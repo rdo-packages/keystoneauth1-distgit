@@ -1,6 +1,6 @@
 %global pypi_name keystoneauth1
 
-%if 0%{?fedora}
+%if 0%{?fedora} >= 24
 %global with_python3 1
 %endif
 
