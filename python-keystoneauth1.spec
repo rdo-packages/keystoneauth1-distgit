@@ -7,12 +7,12 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    XXX
-Release:    XXX
+Version:    2.3.0
+Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
-Source0:    http://tarballs.openstack.org/keystoneauth/keystoneauth-master.tar.gz
+Source0:    http://tarballs.openstack.org/keystoneauth/%{pypi_name}-%{version}.tar.gz
 
 BuildArch:  noarch
 
@@ -160,3 +160,6 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.3.0-
+- Update to 2.3.0
+
