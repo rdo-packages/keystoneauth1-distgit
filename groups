@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-3feefe9b8670e1c47cca02224945dc3da46e657b       	keystoneauth1-distgit-core
-6798fd35bd262d4d0bedb1dd3469faaaf5ff7958        	keystoneauth1-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+3feefe9b8670e1c47cca02224945dc3da46e657b	keystoneauth1-distgit-core
+6798fd35bd262d4d0bedb1dd3469faaaf5ff7958	openstack/keystoneauth1-distgit-ptl
+global:Registered-Users                 	Registered Users
