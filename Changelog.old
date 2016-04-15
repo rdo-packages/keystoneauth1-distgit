@@ -1,0 +1,26 @@
+* Thu Mar 03 2016 Paul Belanger <pabelanger@redhat.com> 2.2.0-2
+- Drop python-argparse dependency as bundled with python now (closes #1314516)
+
+* Tue Mar 01 2016 Alan Pevec <alan.pevec@redhat.com> 2.2.0-1
+- Update to 2.2.0
+
+* Fri Feb 05 2016 Paul Belanger <pabelanger@redhat.com> - 2.1.0-1
+- New upstream 2.1.0 release
+- Disable intersphinx to disable downloads from the internet at build time
+- Clean up build and requires dependencies
+- Switch to python setup.py build_sphinx since this is what upstream uses
+
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
+
+* Wed Oct 07 2015 Alan Pevec <alan.pevec@redhat.com> 1.1.0-2
+- fix tests (Lukas Bezdicka)
+
+* Tue Oct 06 2015 Alan Pevec <alan.pevec@redhat.com> 1.1.0-1
+- Update to upstream 1.1.0
+
+* Thu Sep 17 2015 Thomas Oulevey <thomas.oulevey@cern.ch> - 1.0.0-1
+- Initial specfile

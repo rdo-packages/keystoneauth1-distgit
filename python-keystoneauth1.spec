@@ -1,18 +1,18 @@
 %global pypi_name keystoneauth1
 
-%if 0%{?fedora}
+%if 0%{?fedora} >= 24
 %global with_python3 1
 %endif
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    2.2.0
-Release:    2%{?dist}
+Version:    2.3.0
+Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        http://pypi.python.org/pypi/%{pypi_name}
-Source0:    http://pypi.python.org/packages/source/k/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:    http://tarballs.openstack.org/keystoneauth/%{pypi_name}-%{version}.tar.gz
 
 BuildArch:  noarch
 
@@ -41,9 +41,11 @@ BuildRequires: python-requests-kerberos
 BuildRequires: python-testrepository
 BuildRequires: python-oslotest
 BuildRequires: python-oslo-utils
+BuildRequires: python-positional >= 1.0.1
 
 Requires:      python-iso8601 >= 0.1.9
 Requires:      python-pbr >= 1.8.0
+Requires:      python-positional >= 1.0.1
 Requires:      python-requests >= 2.9.1
 Requires:      python-six => 1.9.0
 Requires:      python-stevedore >= 1.5.0
@@ -71,9 +73,11 @@ BuildRequires: python3-lxml
 BuildRequires: python3-testrepository
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
+BuildRequires: python3-positional >= 1.0.1
 
 Requires:      python3-iso8601 >= 0.1.9
 Requires:      python3-pbr >= 1.8.0
+Requires:      python3-positional >= 1.0.1
 Requires:      python3-requests >= 2.9.1
 Requires:      python3-six => 1.9.0
 Requires:      python3-stevedore >= 1.5.0
@@ -156,29 +160,6 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
-* Thu Mar 03 2016 Paul Belanger <pabelanger@redhat.com> 2.2.0-2
-- Drop python-argparse dependency as bundled with python now (closes #1314516)
+* Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.3.0-
+- Update to 2.3.0
 
-* Tue Mar 01 2016 Alan Pevec <alan.pevec@redhat.com> 2.2.0-1
-- Update to 2.2.0
-
-* Fri Feb 05 2016 Paul Belanger <pabelanger@redhat.com> - 2.1.0-1
-- New upstream 2.1.0 release
-- Disable intersphinx to disable downloads from the internet at build time
-- Clean up build and requires dependencies
-- Switch to python setup.py build_sphinx since this is what upstream uses
-
-* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-4
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
-
-* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.0-3
-- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
-
-* Wed Oct 07 2015 Alan Pevec <alan.pevec@redhat.com> 1.1.0-2
-- fix tests (Lukas Bezdicka)
-
-* Tue Oct 06 2015 Alan Pevec <alan.pevec@redhat.com> 1.1.0-1
-- Update to upstream 1.1.0
-
-* Thu Sep 17 2015 Thomas Oulevey <thomas.oulevey@cern.ch> - 1.0.0-1
-- Initial specfile
