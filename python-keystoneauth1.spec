@@ -103,6 +103,7 @@ BuildRequires: python-oslo-config
 BuildRequires: python-stevedore
 BuildRequires: python-iso8601
 BuildRequires: python-fixtures
+BuildRequires: python-oauthlib
 
 %description doc
 Documentation for OpenStack Identity Authentication Library
