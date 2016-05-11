@@ -42,6 +42,7 @@ BuildRequires: python-testrepository
 BuildRequires: python-oslotest
 BuildRequires: python-oslo-utils
 BuildRequires: python-positional >= 1.0.1
+BuildRequires: python-oauthlib
 
 Requires:      python-iso8601 >= 0.1.9
 Requires:      python-pbr >= 1.8.0
@@ -74,6 +75,7 @@ BuildRequires: python3-testrepository
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-positional >= 1.0.1
+BuildRequires: python3-oauthlib
 
 Requires:      python3-iso8601 >= 0.1.9
 Requires:      python3-pbr >= 1.8.0
