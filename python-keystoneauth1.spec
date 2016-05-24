@@ -34,7 +34,7 @@ BuildRequires: python-six
 BuildRequires: python-pbr >= 1.8.0
 
 # test requires
-BuildRequires: python-betamax
+BuildRequires: python-betamax >= 0.7.0
 BuildRequires: python-fixtures >= 1.3.1
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
@@ -68,7 +68,7 @@ BuildRequires: python3-pbr >= 1.8.0
 BuildRequires: python3-sphinx
 
 # test requres
-BuildRequires: python3-betamax
+BuildRequires: python3-betamax >= 0.7.0
 BuildRequires: python3-fixtures >= 1.3.1
 BuildRequires: python3-lxml
 BuildRequires: python3-testrepository
