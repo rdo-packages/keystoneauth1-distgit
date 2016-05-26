@@ -7,7 +7,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    2.3.0
+Version:    2.4.1
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
@@ -160,6 +160,9 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Thu May 26 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.4.1-1
+- Update to 2.4.1
+
 * Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.3.0-
 - Update to 2.3.0
 
