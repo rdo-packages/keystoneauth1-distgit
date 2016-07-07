@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_e71f22b6",
+        "filename": "python-keystoneauth1.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2016-07-07T12:25:28Z",
+      "side": 1,
+      "message": "We don\u0027t set min.ver. on BRs, buildroot is always taking latest.\nMin.versions are required on runtime deps for upgrades.",
+      "revId": "ee31f617aec282bb4acc3f0a1053b8bd753cdc2f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
