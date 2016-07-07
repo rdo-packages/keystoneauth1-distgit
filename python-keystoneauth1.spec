@@ -99,7 +99,7 @@ BuildRequires: python-oslo-sphinx
 BuildRequires: python-mock
 BuildRequires: python-pep8
 BuildRequires: python-requests
-BuildRequires: python-requests-mock
+BuildRequires: python-requests-mock >= 1.0
 BuildRequires: python-mox3
 BuildRequires: python-oslo-config
 BuildRequires: python-stevedore
