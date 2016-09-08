@@ -11,8 +11,8 @@ Version:    XXX
 Release:    XXX
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
-URL:        http://pypi.python.org/pypi/%{pypi_name}
-Source0:    http://tarballs.openstack.org/keystoneauth/keystoneauth-master.tar.gz
+URL:        https://pypi.io/pypi/%{pypi_name}
+Source0:    https://tarballs.openstack.org/keystoneauth/keystoneauth1-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
