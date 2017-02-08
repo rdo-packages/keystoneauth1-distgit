@@ -7,8 +7,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    XXX
-Release:    XXX
+Version:    2.18.0
+Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        https://pypi.io/pypi/%{pypi_name}
@@ -164,3 +164,6 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 2.18.0-1
+- Update to 2.18.0
+
