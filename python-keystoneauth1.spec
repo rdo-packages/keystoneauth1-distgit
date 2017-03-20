@@ -38,6 +38,7 @@ BuildRequires: python-betamax >= 0.7.0
 BuildRequires: python-fixtures >= 1.3.1
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
+BuildRequires: python-requests-mock >= 1.1
 BuildRequires: python-testrepository
 BuildRequires: python-oslotest
 BuildRequires: python-oslo-utils
@@ -72,6 +73,7 @@ BuildRequires: python3-sphinx
 BuildRequires: python3-betamax >= 0.7.0
 BuildRequires: python3-fixtures >= 1.3.1
 BuildRequires: python3-lxml
+BuildRequires: python3-requests-mock >= 1.1
 BuildRequires: python3-testrepository
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
@@ -101,7 +103,6 @@ BuildRequires: python-oslo-sphinx
 BuildRequires: python-mock
 BuildRequires: python-pep8
 BuildRequires: python-requests
-BuildRequires: python-requests-mock
 BuildRequires: python-mox3
 BuildRequires: python-oslo-config
 BuildRequires: python-stevedore
