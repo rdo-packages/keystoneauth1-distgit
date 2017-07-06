@@ -99,7 +99,7 @@ new clients.
 Summary:    Documentation for OpenStack Identity Authentication Library
 
 BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx
+BuildRequires: python-openstackdocstheme
 BuildRequires: python-mock
 BuildRequires: python-pep8
 BuildRequires: python-requests
@@ -135,7 +135,7 @@ rm -rf %{pypi_name}.egg-info
 %endif
 
 # generate html docs
-%{__python} setup.py build_sphinx
+%{__python} setup.py build_sphinx -b html
 rm -rf doc/build/html/.buildinfo
 
 %check
