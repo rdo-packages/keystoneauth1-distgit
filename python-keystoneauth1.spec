@@ -100,6 +100,7 @@ Summary:    Documentation for OpenStack Identity Authentication Library
 
 BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
+BuildRequires: python-oslo-sphinx
 BuildRequires: python-mock
 BuildRequires: python-pep8
 BuildRequires: python-requests
