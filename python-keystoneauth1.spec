@@ -51,7 +51,7 @@ Requires:      python-pbr >= 1.8.0
 Requires:      python-positional >= 1.0.1
 Requires:      python-requests >= 2.9.1
 Requires:      python-six => 1.9.0
-Requires:      python-stevedore >= 1.16.0
+Requires:      python-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
@@ -86,7 +86,7 @@ Requires:      python3-pbr >= 1.8.0
 Requires:      python3-positional >= 1.0.1
 Requires:      python3-requests >= 2.9.1
 Requires:      python3-six => 1.9.0
-Requires:      python3-stevedore >= 1.16.0
+Requires:      python3-stevedore >= 1.20.0
 
 %description -n python3-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
