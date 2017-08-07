@@ -31,7 +31,7 @@ BuildRequires: git
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-six
-BuildRequires: python-pbr >= 1.8.0
+BuildRequires: python-pbr >= 2.0.0
 
 # test requires
 BuildRequires: python-betamax >= 0.7.0
@@ -42,16 +42,16 @@ BuildRequires: python-requests-mock >= 1.1
 BuildRequires: python-testrepository
 BuildRequires: python-oslotest
 BuildRequires: python-oslo-utils
-BuildRequires: python-positional >= 1.0.1
+BuildRequires: python-positional >= 1.1.1
 BuildRequires: python-oauthlib
 BuildRequires: PyYAML
 
 Requires:      python-iso8601 >= 0.1.11
-Requires:      python-pbr >= 1.8.0
+Requires:      python-pbr >= 2.0.0
 Requires:      python-positional >= 1.0.1
 Requires:      python-requests >= 2.9.1
 Requires:      python-six => 1.9.0
-Requires:      python-stevedore >= 1.16.0
+Requires:      python-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
@@ -66,7 +66,7 @@ Provides:       python3-keystoneauth = %{version}-%{release}
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
-BuildRequires: python3-pbr >= 1.8.0
+BuildRequires: python3-pbr >= 2.0.0
 BuildRequires: python3-sphinx
 
 # test requres
@@ -82,11 +82,11 @@ BuildRequires: python3-oauthlib
 BuildRequires: python3-PyYAML
 
 Requires:      python3-iso8601 >= 0.1.11
-Requires:      python3-pbr >= 1.8.0
+Requires:      python3-pbr >= 2.0.0
 Requires:      python3-positional >= 1.0.1
 Requires:      python3-requests >= 2.9.1
 Requires:      python3-six => 1.9.0
-Requires:      python3-stevedore >= 1.16.0
+Requires:      python3-stevedore >= 1.20.0
 
 %description -n python3-%{pypi_name}
 Keystoneauth provides a standard way to do authentication and service requests
