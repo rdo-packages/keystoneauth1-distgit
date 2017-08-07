@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_e7c7fe62",
+        "filename": "python-keystoneauth1.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-07T14:33:31Z",
+      "side": 1,
+      "message": "2.0.0",
+      "range": {
+        "startLine": 50,
+        "startChar": 29,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "b9057aa1e5350c1e34c5bec4d755e08de06538ab",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c7ca026e",
+        "filename": "python-keystoneauth1.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-07T14:33:31Z",
+      "side": 1,
+      "message": "1.1.1",
+      "range": {
+        "startLine": 51,
+        "startChar": 36,
+        "endLine": 51,
+        "endChar": 40
+      },
+      "revId": "b9057aa1e5350c1e34c5bec4d755e08de06538ab",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
