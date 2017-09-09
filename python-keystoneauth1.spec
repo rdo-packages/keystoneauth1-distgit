@@ -103,7 +103,6 @@ BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
 BuildRequires: python-oslo-sphinx
 BuildRequires: python-mock
-BuildRequires: python-pep8
 BuildRequires: python-requests
 BuildRequires: python-mox3
 BuildRequires: python-oslo-config
