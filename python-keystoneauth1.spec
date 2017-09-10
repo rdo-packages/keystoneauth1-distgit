@@ -1,5 +1,11 @@
 %global pypi_name keystoneauth1
 
+%global common_desc \
+Keystoneauth provides a standard way to do authentication and service requests \
+within the OpenStack ecosystem. It is designed for use in conjunction with \ 
+the existing OpenStack clients and for simplifying the process of writing \
+new clients.
+
 %if 0%{?fedora} >= 24
 %global with_python3 1
 %endif
@@ -17,10 +23,7 @@ Source0:    https://tarballs.openstack.org/keystoneauth/keystoneauth1-%{upstream
 BuildArch:  noarch
 
 %description
-Keystoneauth provides a standard way to do authentication and service requests
-within the OpenStack ecosystem. It is designed for use in conjunction with
-the existing OpenStack clients and for simplifying the process of writing
-new clients.
+%{common_desc}
 
 %package -n     python2-%{pypi_name}
 Summary:        Authentication Libarary for OpenStack Identity
@@ -54,10 +57,7 @@ Requires:      python-six => 1.9.0
 Requires:      python-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
-Keystoneauth provides a standard way to do authentication and service requests
-within the OpenStack ecosystem. It is designed for use in conjunction with
-the existing OpenStack clients and for simplifying the process of writing
-new clients.
+%{common_desc}
 
 %if 0%{?with_python3}
 %package -n     python3-%{pypi_name}
@@ -89,10 +89,7 @@ Requires:      python3-six => 1.9.0
 Requires:      python3-stevedore >= 1.20.0
 
 %description -n python3-%{pypi_name}
-Keystoneauth provides a standard way to do authentication and service requests
-within the OpenStack ecosystem. It is designed for use in conjunction with
-the existing OpenStack clients and for simplifying the process of writing
-new clients.
+%{common_desc}
 %endif
 
 %package doc
