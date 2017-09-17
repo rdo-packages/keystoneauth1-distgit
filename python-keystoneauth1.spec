@@ -110,6 +110,7 @@ BuildRequires: python-oslo-config
 BuildRequires: python-stevedore
 BuildRequires: python-iso8601
 BuildRequires: python-fixtures
+BuildRequires: openstack-macros
 
 %description doc
 Documentation for OpenStack Identity Authentication Library
@@ -120,7 +121,7 @@ Documentation for OpenStack Identity Authentication Library
 sed -i '/sphinx.ext.intersphinx.*$/d'  doc/source/conf.py
 
 # Let RPM handle the dependencies
-rm -rf {test-,}requirements.txt
+%py_req_cleanup
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
