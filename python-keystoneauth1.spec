@@ -42,8 +42,6 @@ BuildRequires: python-fixtures >= 1.3.1
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
 BuildRequires: python-requests-mock >= 1.1
-# FIXME(jpena): remove testrepository as a BR once a new keystoneauth1 version is released
-BuildRequires: python-testrepository
 BuildRequires: python-oslotest
 BuildRequires: python-oslo-utils
 BuildRequires: python-os-testr
@@ -76,8 +74,6 @@ BuildRequires: python3-betamax >= 0.7.0
 BuildRequires: python3-fixtures >= 1.3.1
 BuildRequires: python3-lxml
 BuildRequires: python3-requests-mock >= 1.1
-# FIXME(jpena): remove testrepository as a BR once a new keystoneauth1 version is released
-BuildRequires: python3-testrepository
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-os-testr
@@ -141,11 +137,11 @@ rm -rf %{pypi_name}.egg-info
 rm -rf doc/build/html/.buildinfo
 
 %check
-%{__python2} setup.py test
+%{__python2} /usr/bin/ostestr
 %if 0%{?with_python3}
 # cleanup testrepository
 rm -rf .testrepository
-%{__python3} setup.py test
+%{__python3} /usr/bin/ostestr
 %endif
 
 %files -n python2-%{pypi_name}
