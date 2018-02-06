@@ -32,29 +32,31 @@ Provides:       python-keystoneauth = %{version}-%{release}
 
 BuildRequires: git
 BuildRequires: python2-devel
-BuildRequires: python-setuptools
-BuildRequires: python-six
-BuildRequires: python-pbr >= 2.0.0
+BuildRequires: python2-setuptools
+BuildRequires: python2-six
+BuildRequires: python2-pbr >= 2.0.0
 
 # test requires
-BuildRequires: python-betamax >= 0.7.0
-BuildRequires: python-fixtures >= 1.3.1
-BuildRequires: python-lxml
-BuildRequires: python-requests-kerberos
-BuildRequires: python-requests-mock >= 1.1
-BuildRequires: python-oslotest
-BuildRequires: python-oslo-utils
-BuildRequires: python-os-testr
-BuildRequires: python-positional >= 1.1.1
-BuildRequires: python-oauthlib
+BuildRequires: python2-betamax >= 0.7.0
+BuildRequires: python2-fixtures >= 1.3.1
+BuildRequires: python2-lxml
+BuildRequires: python2-requests-kerberos
+BuildRequires: python2-requests-mock >= 1.1
+BuildRequires: python2-oslotest
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-os-testr
+BuildRequires: python2-oauthlib
+%if 0%{?fedora} || 0%{?rhel} > 7
+BuildRequires: python2-pyyaml
+%else
 BuildRequires: PyYAML
+%endif
 
-Requires:      python-iso8601 >= 0.1.11
-Requires:      python-pbr >= 2.0.0
-Requires:      python-positional >= 1.1.1
-Requires:      python-requests >= 2.9.1
-Requires:      python-six => 1.9.0
-Requires:      python-stevedore >= 1.20.0
+Requires:      python2-iso8601 >= 0.1.11
+Requires:      python2-pbr >= 2.0.0
+Requires:      python2-requests >= 2.14.2
+Requires:      python2-six => 1.10.0
+Requires:      python2-stevedore >= 1.20.0
 
 %description -n python2-%{pypi_name}
 %{common_desc}
@@ -77,15 +79,13 @@ BuildRequires: python3-requests-mock >= 1.1
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-os-testr
-BuildRequires: python3-positional >= 1.1.1
 BuildRequires: python3-oauthlib
 BuildRequires: python3-PyYAML
 
 Requires:      python3-iso8601 >= 0.1.11
 Requires:      python3-pbr >= 2.0.0
-Requires:      python3-positional >= 1.1.1
-Requires:      python3-requests >= 2.9.1
-Requires:      python3-six => 1.9.0
+Requires:      python3-requests >= 2.14.2
+Requires:      python3-six => 1.10.0
 Requires:      python3-stevedore >= 1.20.0
 
 %description -n python3-%{pypi_name}
@@ -95,17 +95,16 @@ Requires:      python3-stevedore >= 1.20.0
 %package doc
 Summary:    Documentation for OpenStack Identity Authentication Library
 
-BuildRequires: python-sphinx
-BuildRequires: python-openstackdocstheme
-BuildRequires: python-oslo-sphinx
-BuildRequires: python-mock
-BuildRequires: python-pep8
-BuildRequires: python-requests
-BuildRequires: python-mox3
-BuildRequires: python-oslo-config
-BuildRequires: python-stevedore
-BuildRequires: python-iso8601
-BuildRequires: python-fixtures
+BuildRequires: python2-sphinx
+BuildRequires: python2-openstackdocstheme
+BuildRequires: python2-mock
+BuildRequires: python2-pep8
+BuildRequires: python2-requests
+BuildRequires: python2-mox3
+BuildRequires: python2-oslo-config
+BuildRequires: python2-stevedore
+BuildRequires: python2-iso8601
+BuildRequires: python2-fixtures
 
 %description doc
 Documentation for OpenStack Identity Authentication Library
