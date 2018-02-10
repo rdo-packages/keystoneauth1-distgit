@@ -13,8 +13,8 @@ new clients.
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    XXX
-Release:    XXX
+Version:    3.4.0
+Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        https://pypi.io/pypi/%{pypi_name}
@@ -42,17 +42,18 @@ BuildRequires: python2-fixtures >= 1.3.1
 BuildRequires: python2-oslotest
 BuildRequires: python2-oslo-utils
 BuildRequires: python2-os-testr
-BuildRequires: python2-oauthlib
 %if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-pyyaml
 BuildRequires: python2-lxml
 BuildRequires: python2-requests-kerberos
 BuildRequires: python2-requests-mock >= 1.1
+BuildRequires: python2-oauthlib
 %else
 BuildRequires: PyYAML
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
 BuildRequires: python-requests-mock >= 1.1
+BuildRequires: python-oauthlib
 %endif
 
 Requires:      python2-iso8601 >= 0.1.11
@@ -169,3 +170,6 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Sat Feb 10 2018 RDO <dev@lists.rdoproject.org> 3.4.0-1
+- Update to 3.4.0
+
