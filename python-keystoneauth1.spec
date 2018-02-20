@@ -29,6 +29,7 @@ BuildArch:  noarch
 Summary:        Authentication Libarary for OpenStack Identity
 Provides:       python-%{pypi_name} = %{version}-%{release}
 Provides:       python-keystoneauth = %{version}-%{release}
+Obsoletes:      python-keystoneauth1 < %{version}-%{release}
 
 BuildRequires: git
 BuildRequires: python2-devel
