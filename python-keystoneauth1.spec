@@ -27,8 +27,8 @@ BuildArch:  noarch
 
 %package -n     python2-%{pypi_name}
 Summary:        Authentication Libarary for OpenStack Identity
-Provides:       python-%{pypi_name} = %{version}-%{release}
-Provides:       python-keystoneauth = %{version}-%{release}
+%{?python_provide:%python_provide python2-%{pypi_name}}
+%{?python_provide:%python_provide python2-keystoneauth}
 
 BuildRequires: git
 BuildRequires: python2-devel
@@ -69,6 +69,7 @@ Requires:      python2-stevedore >= 1.20.0
 %package -n     python3-%{pypi_name}
 Summary:        Authentication Libarary for OpenStack Identity
 Provides:       python3-keystoneauth = %{version}-%{release}
+%{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
