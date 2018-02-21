@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_5d63fe1a",
+        "filename": "python-keystoneauth1.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2018-02-21T18:15:27Z",
+      "side": 1,
+      "message": "keystoneauth  * typo",
+      "range": {
+        "startLine": 31,
+        "startChar": 42,
+        "endLine": 31,
+        "endChar": 53
+      },
+      "revId": "46244089b86c7042ecca05ae173056119d9a4d04",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
