@@ -16,6 +16,24 @@
       "revId": "653665dcc4155aac64c8e5c6525f14ba42ddb5c2",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_9d9f465f",
+        "filename": "python-keystoneauth1.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2018-02-21T14:23:04Z",
+      "side": 1,
+      "message": "Why is that not already in this package then?",
+      "parentUuid": "7aaa499b_dd202e4c",
+      "revId": "653665dcc4155aac64c8e5c6525f14ba42ddb5c2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
