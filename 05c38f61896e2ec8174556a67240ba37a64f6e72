@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ab14d0d_c108662b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-02-28T11:47:52Z",
+      "side": 1,
+      "message": "Add following below it: \n(cherry picked from commit 74b3501bb74ef617d661baa606900b41cf274b3e)",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 52
+      },
+      "revId": "05c38f61896e2ec8174556a67240ba37a64f6e72",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
