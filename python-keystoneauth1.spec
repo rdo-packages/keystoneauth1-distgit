@@ -56,6 +56,7 @@ BuildRequires: python-requests-mock >= 1.1
 %endif
 
 Requires:      python2-iso8601 >= 0.1.11
+Requires:      python2-os-service-types >= 1.2.0
 Requires:      python2-pbr >= 2.0.0
 Requires:      python2-requests >= 2.14.2
 Requires:      python2-six => 1.10.0
@@ -87,6 +88,7 @@ BuildRequires: python3-oauthlib
 BuildRequires: python3-PyYAML
 
 Requires:      python3-iso8601 >= 0.1.11
+Requires:      python3-os-service-types
 Requires:      python3-pbr >= 2.0.0
 Requires:      python3-requests >= 2.14.2
 Requires:      python3-six => 1.10.0
@@ -105,6 +107,7 @@ BuildRequires: python2-mock
 BuildRequires: python2-requests
 BuildRequires: python2-mox3
 BuildRequires: python2-oslo-config
+BuildRequires: python2-os-service-types
 BuildRequires: python2-stevedore
 BuildRequires: python2-iso8601
 BuildRequires: python2-fixtures
