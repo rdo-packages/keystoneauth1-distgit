@@ -170,3 +170,4 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+# REMOVEME: error caused by commit https://github.com/openstack/keystoneauth/commit/d6670ee5c92d005cf3de7cf26e37a44a3aabbd9d
