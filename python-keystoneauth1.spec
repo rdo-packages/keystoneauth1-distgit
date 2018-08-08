@@ -41,7 +41,7 @@ BuildRequires: python2-betamax >= 0.7.0
 BuildRequires: python2-fixtures >= 1.3.1
 BuildRequires: python2-oslotest
 BuildRequires: python2-oslo-utils
-BuildRequires: python2-os-testr
+BuildRequires: python2-stestr
 BuildRequires: python2-oauthlib
 %if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-pyyaml
@@ -83,7 +83,7 @@ BuildRequires: python3-lxml
 BuildRequires: python3-requests-mock >= 1.1
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
-BuildRequires: python3-os-testr
+BuildRequires: python3-stestr
 BuildRequires: python3-oauthlib
 BuildRequires: python3-PyYAML
 
@@ -147,11 +147,9 @@ rm -rf %{pypi_name}.egg-info
 rm -rf doc/build/html/.buildinfo
 
 %check
-%{__python2} /usr/bin/ostestr
+stestr run
 %if 0%{?with_python3}
-# cleanup testrepository
-rm -rf .testrepository
-%{__python3} /usr/bin/ostestr
+stestr-3 run
 %endif
 
 %files -n python2-%{pypi_name}
