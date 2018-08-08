@@ -41,18 +41,20 @@ BuildRequires: python2-betamax >= 0.7.0
 BuildRequires: python2-fixtures >= 1.3.1
 BuildRequires: python2-oslotest
 BuildRequires: python2-oslo-utils
-BuildRequires: python2-os-testr
+BuildRequires: python2-stestr
 BuildRequires: python2-oauthlib
 %if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-pyyaml
 BuildRequires: python2-lxml
 BuildRequires: python2-requests-kerberos
 BuildRequires: python2-requests-mock >= 1.1
+BuildRequires: python2-pep8
 %else
 BuildRequires: PyYAML
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
 BuildRequires: python-requests-mock >= 1.1
+BuildRequires: python-pep8
 %endif
 
 Requires:      python2-iso8601 >= 0.1.11
@@ -83,9 +85,10 @@ BuildRequires: python3-lxml
 BuildRequires: python3-requests-mock >= 1.1
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
-BuildRequires: python3-os-testr
+BuildRequires: python3-stestr
 BuildRequires: python3-oauthlib
 BuildRequires: python3-PyYAML
+BuildRequires: python3-pep8
 
 Requires:      python3-iso8601 >= 0.1.11
 Requires:      python3-os-service-types
@@ -111,11 +114,6 @@ BuildRequires: python2-os-service-types
 BuildRequires: python2-stevedore
 BuildRequires: python2-iso8601
 BuildRequires: python2-fixtures
-%if 0%{?fedora} || 0%{?rhel} > 7
-BuildRequires: python2-pep8
-%else
-BuildRequires: python-pep8
-%endif
 
 %description doc
 Documentation for OpenStack Identity Authentication Library
@@ -147,11 +145,9 @@ rm -rf %{pypi_name}.egg-info
 rm -rf doc/build/html/.buildinfo
 
 %check
-%{__python2} /usr/bin/ostestr
+stestr run
 %if 0%{?with_python3}
-# cleanup testrepository
-rm -rf .testrepository
-%{__python3} /usr/bin/ostestr
+stestr-3 run
 %endif
 
 %files -n python2-%{pypi_name}
