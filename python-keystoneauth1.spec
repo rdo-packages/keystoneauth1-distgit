@@ -82,7 +82,9 @@ BuildRequires: python3-sphinx
 BuildRequires: python3-betamax >= 0.7.0
 BuildRequires: python3-fixtures >= 1.3.1
 BuildRequires: python3-lxml
+BuildRequires: python3-requests-kerberos
 BuildRequires: python3-requests-mock >= 1.1
+BuildRequires: python3-oslo-config
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-stestr
