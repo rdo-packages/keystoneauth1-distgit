@@ -6,9 +6,11 @@ within the OpenStack ecosystem. It is designed for use in conjunction with \
 the existing OpenStack clients and for simplifying the process of writing \
 new clients.
 
-%if 0%{?fedora} >= 24
+%if 0%{?fedora} >= 24  || 0%{?rhel} > 7
 %global with_python3 1
 %endif
+
+%global with_doc 1
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -40,6 +42,7 @@ BuildRequires: python2-pbr >= 2.0.0
 BuildRequires: python2-betamax >= 0.7.0
 BuildRequires: python2-fixtures >= 1.3.1
 BuildRequires: python2-oslotest
+BuildRequires: python2-oslo-config
 BuildRequires: python2-oslo-utils
 BuildRequires: python2-stestr
 BuildRequires: python2-oauthlib
@@ -76,7 +79,6 @@ Provides:       python3-keystoneauth = %{version}-%{release}
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr >= 2.0.0
-BuildRequires: python3-sphinx
 
 # test requres
 BuildRequires: python3-betamax >= 0.7.0
@@ -103,6 +105,7 @@ Requires:      python3-stevedore >= 1.20.0
 %{common_desc}
 %endif
 
+%if 0%{?with_doc}
 %package doc
 Summary:    Documentation for OpenStack Identity Authentication Library
 
@@ -111,7 +114,6 @@ BuildRequires: python2-openstackdocstheme
 BuildRequires: python2-mock
 BuildRequires: python2-requests
 BuildRequires: python2-mox3
-BuildRequires: python2-oslo-config
 BuildRequires: python2-os-service-types
 BuildRequires: python2-stevedore
 BuildRequires: python2-iso8601
@@ -119,6 +121,8 @@ BuildRequires: python2-fixtures
 
 %description doc
 Documentation for OpenStack Identity Authentication Library
+%endif
+
 
 %prep
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
@@ -142,9 +146,11 @@ rm -rf %{pypi_name}.egg-info
 %py3_install
 %endif
 
+%if 0%{?with_doc}
 # generate html docs
 %{__python} setup.py build_sphinx -b html
 rm -rf doc/build/html/.buildinfo
+%endif
 
 %check
 stestr run
@@ -166,8 +172,10 @@ stestr-3 run
 %{python3_sitelib}/*.egg-info
 %endif
 
+%if 0%{?with_doc}
 %files doc
 %license LICENSE
 %doc doc/build/html
+%endif
 
 %changelog
