@@ -41,11 +41,17 @@ BuildRequires: python2-pbr >= 2.0.0
 # test requires
 BuildRequires: python2-betamax >= 0.7.0
 BuildRequires: python2-fixtures >= 1.3.1
+BuildRequires: python2-mock
 BuildRequires: python2-oslotest
 BuildRequires: python2-oslo-config
 BuildRequires: python2-oslo-utils
 BuildRequires: python2-stestr
 BuildRequires: python2-oauthlib
+BuildRequires: python2-requests
+BuildRequires: python2-os-service-types
+BuildRequires: python2-stevedore
+BuildRequires: python2-iso8601
+
 %if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-pyyaml
 BuildRequires: python2-lxml
@@ -84,6 +90,7 @@ BuildRequires: python3-pbr >= 2.0.0
 BuildRequires: python3-betamax >= 0.7.0
 BuildRequires: python3-fixtures >= 1.3.1
 BuildRequires: python3-lxml
+BuildRequires: python3-mock
 BuildRequires: python3-requests-kerberos
 BuildRequires: python3-requests-mock >= 1.1
 BuildRequires: python3-oslo-config
@@ -91,8 +98,12 @@ BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-stestr
 BuildRequires: python3-oauthlib
+BuildRequires: python3-requests
 BuildRequires: python3-PyYAML
 BuildRequires: python3-pep8
+BuildRequires: python3-os-service-types
+BuildRequires: python3-stevedore
+BuildRequires: python3-iso8601
 
 Requires:      python3-iso8601 >= 0.1.11
 Requires:      python3-os-service-types
@@ -111,13 +122,7 @@ Summary:    Documentation for OpenStack Identity Authentication Library
 
 BuildRequires: python2-sphinx
 BuildRequires: python2-openstackdocstheme
-BuildRequires: python2-mock
-BuildRequires: python2-requests
 BuildRequires: python2-mox3
-BuildRequires: python2-os-service-types
-BuildRequires: python2-stevedore
-BuildRequires: python2-iso8601
-BuildRequires: python2-fixtures
 
 %description doc
 Documentation for OpenStack Identity Authentication Library
