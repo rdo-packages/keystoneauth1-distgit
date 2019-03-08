@@ -15,8 +15,8 @@ new clients.
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    XXX
-Release:    XXX
+Version:    3.13.1
+Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
 URL:        https://pypi.io/pypi/%{pypi_name}
@@ -184,3 +184,6 @@ stestr-3 run
 %endif
 
 %changelog
+* Fri Mar 08 2019 RDO <dev@lists.rdoproject.org> 3.13.1-1
+- Update to 3.13.1
+
