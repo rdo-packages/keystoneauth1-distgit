@@ -158,9 +158,9 @@ rm -rf doc/build/html/.buildinfo
 %endif
 
 %check
-stestr run
+PYTHON=python2 stestr run
 %if 0%{?with_python3}
-stestr-3 run
+PYTHON=python3 stestr-3 run
 %endif
 
 %files -n python2-%{pypi_name}
