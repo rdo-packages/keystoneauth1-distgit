@@ -184,3 +184,4 @@ PYTHON=python3 stestr-3 run
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/keystoneauth/commit/?id=0c34f0f8ff3964efdc27a1e7299683294d60535d
