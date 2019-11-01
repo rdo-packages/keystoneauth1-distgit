@@ -13,7 +13,7 @@ new clients.
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    3.4.0
+Version:    3.4.1
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
@@ -171,6 +171,9 @@ rm -rf .testrepository
 %doc doc/build/html
 
 %changelog
+* Fri Nov 01 2019 RDO <dev@lists.rdoproject.org> 3.4.1-1
+- Update to 3.4.1
+
 * Sat Feb 10 2018 RDO <dev@lists.rdoproject.org> 3.4.0-1
 - Update to 3.4.0
 
