@@ -65,12 +65,10 @@ BuildRequires: python%{pyver}-requests-mock >= 1.1
 BuildRequires: PyYAML
 BuildRequires: python-lxml
 BuildRequires: python-requests-kerberos
-BuildRequires: python-pep8
 %else
 BuildRequires: python%{pyver}-PyYAML
 BuildRequires: python%{pyver}-lxml
 BuildRequires: python%{pyver}-requests-kerberos
-BuildRequires: python%{pyver}-pep8
 %endif
 
 Requires:      python%{pyver}-iso8601 >= 0.1.11
