@@ -22,7 +22,7 @@ new clients.
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    3.17.2
+Version:    3.17.3
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
@@ -139,6 +139,9 @@ PYTHON=python%{pyver} stestr-%{pyver} run --black-regex '.*test_invalidate_respo
 %endif
 
 %changelog
+* Mon Jul 13 2020 RDO <dev@lists.rdoproject.org> 3.17.3-1
+- Update to 3.17.3
+
 * Wed Feb 26 2020 RDO <dev@lists.rdoproject.org> 3.17.2-1
 - Update to 3.17.2
 
