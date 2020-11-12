@@ -41,7 +41,7 @@ Summary:        Authentication Libarary for OpenStack Identity
 %{?python_provide:%python_provide python3-%{pypi_name}}
 %{?python_provide:%python_provide python3-keystoneauth}
 
-BuildRequires: git
+BuildRequires: git-core
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-six
