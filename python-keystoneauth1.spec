@@ -83,7 +83,6 @@ Summary:    Documentation for OpenStack Identity Authentication Library
 BuildRequires: python3-sphinx
 BuildRequires: python3-sphinxcontrib-apidoc
 BuildRequires: python3-openstackdocstheme
-BuildRequires: python3-mox3
 
 %description -n python-%{pypi_name}-doc
 Documentation for OpenStack Identity Authentication Library
