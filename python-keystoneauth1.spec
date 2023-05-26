@@ -50,7 +50,6 @@ BuildRequires: python3-pbr >= 2.0.0
 # test requires
 BuildRequires: python3-betamax >= 0.7.0
 BuildRequires: python3-fixtures >= 1.3.1
-BuildRequires: python3-mock
 BuildRequires: python3-oslotest
 BuildRequires: python3-oslo-config
 BuildRequires: python3-oslo-utils
