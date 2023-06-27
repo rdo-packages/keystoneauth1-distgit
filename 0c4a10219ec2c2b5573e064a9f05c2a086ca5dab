@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49b4b14e_56e8767e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-27T12:54:10Z",
+      "side": 1,
+      "message": "it needs sed -i \u0027/sphinx-build/ s/-W//\u0027 tox.ini to avoid making doc building fail when there is a Warning. ",
+      "revId": "0c4a10219ec2c2b5573e064a9f05c2a086ca5dab",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
