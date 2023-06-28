@@ -16,6 +16,24 @@
       "message": "I\u0027d put it after the other sed commands l.78",
       "revId": "fa6329f030180bef8f6a571744213232b586619f",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88856359_e611af11",
+        "filename": "python-keystoneauth1.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 757
+      },
+      "writtenOn": "2023-06-28T09:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bc72fde_6ee75260",
+      "revId": "fa6329f030180bef8f6a571744213232b586619f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
