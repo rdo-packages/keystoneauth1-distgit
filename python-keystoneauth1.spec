@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 %global pypi_name keystoneauth1
 
 %global common_desc \
@@ -13,7 +13,7 @@ new clients.
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-%{pypi_name}
-Version:    5.0.0
+Version:    5.0.1
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    ASL 2.0
@@ -137,6 +137,9 @@ PYTHON=%{__python3} stestr-3 run
 %endif
 
 %changelog
+* Mon Feb 12 2024 RDO <dev@lists.rdoproject.org> 5.0.1-1
+- Update to 5.0.1
+
 * Tue Sep 13 2022 RDO <dev@lists.rdoproject.org> 5.0.0-1
 - Update to 5.0.0
 
