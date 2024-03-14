@@ -15,7 +15,7 @@ new clients.
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order flake8-docstrings
 
 Name:       python-%{pypi_name}
-Version:    5.5.0
+Version:    5.6.0
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    Apache-2.0
@@ -127,6 +127,9 @@ rm -rf doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Thu Mar 14 2024 RDO <dev@lists.rdoproject.org> 5.6.0-1
+- Update to 5.6.0
+
 * Thu Mar 14 2024 RDO <dev@lists.rdoproject.org> 5.5.0-1
 - Update to 5.5.0
 
