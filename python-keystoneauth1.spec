@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %global pypi_name keystoneauth1
 
 %global common_desc \
@@ -15,7 +15,7 @@ new clients.
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order flake8-docstrings
 
 Name:       python-%{pypi_name}
-Version:    5.6.0
+Version:    5.6.1
 Release:    1%{?dist}
 Summary:    Authentication Library for OpenStack Clients
 License:    Apache-2.0
@@ -127,6 +127,9 @@ rm -rf doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Mon May 19 2025 RDO <dev@lists.rdoproject.org> 5.6.1-1
+- Update to 5.6.1
+
 * Thu Mar 14 2024 RDO <dev@lists.rdoproject.org> 5.6.0-1
 - Update to 5.6.0
 
