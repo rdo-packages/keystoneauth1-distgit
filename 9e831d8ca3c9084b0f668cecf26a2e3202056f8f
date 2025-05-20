@@ -1,0 +1,8 @@
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Workflow+1: Yatin Karel <ykarel@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 20 May 2025 05:25:06 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/keystoneauth1-distgit/+/57664
+Project: openstack/keystoneauth1-distgit
+Branch: refs/heads/caracal-rdo
