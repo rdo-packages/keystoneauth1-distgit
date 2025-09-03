@@ -128,3 +128,4 @@ rm -rf doc/build/html/.buildinfo
 
 %changelog
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/keystoneauth/commit/4f0414d864bd790aa6dc54e55308a94653fbcfb4
